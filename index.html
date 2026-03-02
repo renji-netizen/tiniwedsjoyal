@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Full Screen Flipbook</title>
+    <title>Flipbook</title>
     
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>         
@@ -95,8 +95,6 @@
     </style>
 </head>
 <body>
-<!-- Fully transparent overlay that captures the first touch -->
-<div id="fs-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:10001; background:transparent; cursor:pointer;"></div>
 
     <div id="book-container">
         <!-- Mute Button is now inside the container to float over images -->
@@ -192,36 +190,7 @@
         $(window).resize(function() {
             location.reload(); // Simplest way to recalculate full-screen on resize
         });
-// Function to request fullscreen
-const overlay = document.getElementById('fs-overlay');
 
-function activateFullscreen() {
-    let elem = document.documentElement;
-
-    // Fullscreen logic for all browsers
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) { 
-        elem.webkitRequestFullscreen(); // Safari/Chrome
-    } else if (elem.msRequestFullscreen) { 
-        elem.msRequestFullscreen(); // Edge
-    }
-
-    // IMPORTANT: Hide the overlay so it doesn't block the flipbook buttons
-    overlay.style.display = 'none';
-
-    // Optional: Start your background music on first touch
-    if (bgMusic && bgMusic.paused && !isMuted) {
-        bgMusic.play();
-    }
-}
-
-// Listen for both click (Desktop) and touchend (Mobile)
-overlay.addEventListener('click', activateFullscreen);
-overlay.addEventListener('touchend', activateFullscreen);
-
-	</script>
-	</body>
+    </script>
+</body>
 </html>
-
-
