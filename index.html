@@ -190,8 +190,7 @@
         $(window).resize(function() {
             location.reload(); // Simplest way to recalculate full-screen on resize
         });
-    </script>
-	// Function to request fullscreen
+// Function to request fullscreen
 function activateFullscreen() {
     let elem = document.documentElement;
     if (elem.requestFullscreen) {
@@ -210,6 +209,7 @@ function activateFullscreen() {
 // Listen for the first touch or click anywhere on the page
 window.addEventListener('touchstart', activateFullscreen);
 window.addEventListener('click', activateFullscreen);
-
-</body>
+	</script>
+	</body>
 </html>
+
