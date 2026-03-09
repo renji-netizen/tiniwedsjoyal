@@ -55,23 +55,30 @@
 
                 /* Enlarged Navigation Arrows */
         .nav-arrow {
-            position: fixed; 
-            top: 50%; 
-            transform: translateY(-50%);
-            /* Increased from 45px to 60px */
-            width: 60px; 
-            height: 60px; 
-            cursor: pointer; 
-            z-index: 1000;
-            background: rgba(222, 195, 123, 0.15); 
-            border-radius: 50%;
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            transition: 0.3s; 
-            border: 1px solid rgba(222, 195, 123, 0.2);
-            backdrop-filter: blur(5px);
-        }
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    
+
+cursor: pointer;
+    z-index: 1000;
+    background: rgba(222, 195, 123, 0.15);
+    border-radius: 50%;
+    display: flex;
+    
+
+align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    border: 1px solid rgba(222, 195, 123, 0.2);
+    
+
+backdrop-filter: blur(5px);
+
+    animation: arrowPulseGlow 1.4s infinite ease-in-out;
+}
         
         .nav-arrow:hover { 
             background: rgba(222, 195, 123, 0.4); 
@@ -85,13 +92,34 @@
 
         /* Enlarged CSS Arrow Shape */
         .arrow-icon {
-            border: solid gold; 
-            /* Increased thickness from 3px to 5px */
-            border-width: 0 5px 5px 0; 
-            display: inline-block; 
-            /* Increased size from 6px to 12px */
-            padding: 8px; 
-        }
+    border: solid gold;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 8px;
+
+    
+
+animation: arrowPulseGlow 1.5s infinite ease-in-out;
+}
+
+	@keyframes arrowPulseGlow {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 4px rgba(222,195,123,0.3);
+    }
+    50% 
+
+{
+        opacity: 0.4;
+        box-shadow: 0 0 18px rgba(222,195,123,0.9);
+    }
+    100% {
+        opacity: 1;
+        box-
+
+shadow: 0 0 4px rgba(222,195,123,0.3);
+    }
+}
     </style>
 </head>
 <body>
@@ -126,23 +154,33 @@
 
                 function renderBook() {
             var screenH = $(window).height() * 0.98; 
-            var screenW = (screenH / 900) * 506;   
+            var screenW = 
+
+(screenH / 900) * 506;   
 
             // This ensures the container is the exact size of the image
-            $('#book-container').css({ 
+            $('#book-
+
+container').css({ 
                 width: screenW, 
                 height: screenH,
                 position: 'relative' 
-            });
+       
+
+     });
 
             $("#flipbook").show().turn({
                 width: screenW, 
                 height: screenH,
-                autoCenter: true, 
+              
+
+  autoCenter: true, 
                 display: 'single',
                 acceleration: true, 
                 duration: 1500, 
-                gradients: true, 
+    
+
+            gradients: true, 
                 elevation: 300
             });
         }
